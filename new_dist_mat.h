@@ -51,15 +51,17 @@ vector<vector<double>> distance_mat(const vector<pair<string, vector<double>>> &
             {
                 d = distance(coord[j].second[0], coord[j].second[1], coord[9].second[0], coord[9].second[1]);
                 v = {j,9};
+                res[j][9] = d;
             }
 
             else
             {
                 d = distance(coord[j].second[0], coord[j].second[1], coord[i].second[0], coord[i].second[1]);
                 v = {j,i};
+                res[j][i] = d;
             }
             pair<double, vector<int>> p = make_pair(d, v);
-            res[j][i] = d;
+            
             eight_min.push_back(p);
         }
 
