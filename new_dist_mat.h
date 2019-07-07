@@ -49,9 +49,9 @@ vector<vector<double>> distance_mat(const vector<pair<string, vector<double>>> &
             vector<int> v;
             if(i==j)
             {
-                d = distance(coord[j].second[0], coord[j].second[1], coord[9].second[0], coord[9].second[1]);
-                v = {j,9};
-                res[j][9] = d;
+                d = distance(coord[j].second[0], coord[j].second[1], coord[8].second[0], coord[8].second[1]);
+                v = {j,8};
+                res[j][8] = d;
             }
 
             else
@@ -75,7 +75,7 @@ vector<vector<double>> distance_mat(const vector<pair<string, vector<double>>> &
         int mp = pickMax(eight_min);
         pair<double,vector<int>> m = eight_min[mp];
         //finally,let's fill in our res
-        for(int i=0;i<coord.size();++i)
+        for(int i=8;i<coord.size();++i)
         {
             if (j==i)
                 continue;
@@ -98,14 +98,14 @@ vector<vector<double>> distance_mat(const vector<pair<string, vector<double>>> &
             }
         }
 
-        for(auto &p: eight_min)
-        {
-            if (res[p.second[0]][p.second[1]] == res[p.second[1]][p.second[0]])
-            {
-                res[p.second[1]][p.second[0]] = 0;
-                --num_edges;
-            }
-        }
+//         for(auto &p: eight_min)
+//         {
+//             if (res[p.second[0]][p.second[1]] == res[p.second[1]][p.second[0]])
+//             {
+//                 res[p.second[1]][p.second[0]] = 0;
+//                 --num_edges;
+//             }
+//         }
     }
 
     return res;
