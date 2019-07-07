@@ -43,22 +43,28 @@ vector<pair<string, vector<double>>> SaveData()
 {
 
 
-    ifstream inFile("C:\\Users\\msalm\\Desktop\\file.txt");
+    ifstream inFile("C:\\Users\\msalm\\Desktop\\file.csv");
     vector<pair<string, vector<double>>> all_info;
 
-    string city;
+    string city, s, d, line;
     double shirota, dolgota;
 
-
-    while(inFile >> city >> shirota >> dolgota)
+    while(getline(inFile, line))
     {
+        stringstream ss(line);
+        getline(ss, city, ',');
+        getline(ss, s, ',');
+        getline(ss, d);
+        shirota = stod(s);
+        dolgota = stod(d);
+
         pair<string, vector<double>> p;
         vector<double> coordinates;
         coordinates.push_back(shirota);
         coordinates.push_back(dolgota);
         p = make_pair(city, coordinates);
         all_info.push_back(p);
-        //cout << city << ' '<<shirota << ' '<<dolgota;
+        //cout << city << ' ' << shirota << ' ' << dolgota;
     }
 
 //    for(auto a: all_info)
