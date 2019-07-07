@@ -79,7 +79,7 @@ vector<vector<double>> distance_mat(const vector<pair<string, vector<double>>> &
         {
             if (j==i)
                 continue;
-            if(j >=0 && j<=7 && i==9)
+            if(j >=0 && j<=7 && i==8)
                 continue;
 
             double d = distance(coord[j].second[0], coord[j].second[1], coord[i].second[0], coord[i].second[1]);
