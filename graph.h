@@ -3,6 +3,7 @@
 #include <fstream>
 #include <utility>
 #include <cmath>
+#include <sstream>
 
 
 using namespace std;
@@ -38,7 +39,7 @@ public:
 //----------------------------------------------------------------------------------------------------------------------
 /*This part is definition of methods defined above*/
 
-///save data from txt file
+///save data from csv file
 vector<pair<string, vector<double>>> SaveData()
 {
 
