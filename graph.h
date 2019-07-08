@@ -18,7 +18,6 @@ struct Edge
 struct Subset
 {
     string parent;
-    int rank;
 };
 
 
@@ -28,6 +27,19 @@ public:
     int V, E;
     Edge* edge;
 };
+
+
+Graph* createGraph(int v,int e)
+{
+    Graph* graph = new Graph;
+    graph->V = v;
+    graph->E = e;
+    graph->edge = new Edge[e];
+    return graph;
+
+}
+
+
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -65,12 +77,3 @@ vector<pair<string, vector<double>>> SaveData()
 vector<pair<string, vector<double>>> info = SaveData();
 
 
-Graph* createGraph(int v,int e)
-{
-    Graph* graph = new Graph;
-    graph->V = v;
-    graph->E = e;
-    graph->edge = new Edge[e];
-    return graph;
-
-}
